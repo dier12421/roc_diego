@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login Estético</title>
-  <link rel="stylesheet" href="../roc_diego/css/style.css"/>
+  <link rel="stylesheet" href="../roc_diego/css/diego.css"/>
 </head>
 <body>
   <div class="login-box">
     <h2>Central de Segurança</h2>
-    <form>
+    <form action="pagina-principal.html" method="POST">
       <input type="text" placeholder="CPF ou Login Sentinela" required />
       
       <input type="password" id="senha" placeholder="Senha" required />
@@ -20,14 +20,20 @@
       </label>
 
       <button type="submit">Entrar</button>
-      <button type="button">Voltar</button>
+      <button type="button" onclick="window.location.href='menu.html'">Voltar</button>
 
       <div class="links">
-        <a href="#">Ainda não sou cadastrado</a>
-        <a href="#">Esqueci minha senha</a>
+        <a href="cadastro.html">Ainda não sou cadastrado</a>
+        <a href="recuperar-senha.html">Esqueci minha senha</a>
       </div>
     </form>
   </div>
 
+  <script>
+    function mostrarSenha() {
+      const senhaInput = document.getElementById("senha");
+      senhaInput.type = senhaInput.type === "password" ? "text" : "password";
+    }
+  </script>
 </body>
 </html>
